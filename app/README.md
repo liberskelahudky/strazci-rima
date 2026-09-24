@@ -19,3 +19,15 @@ npm run build:single  # celá hra v jednom HTML souboru do dist-single/
 - Obsah v `src/data/`: 7 milníků (`chapters.ts`), ~80 misí (`missions.ts`), 9 památek (`places.ts`).
 - Postup se ukládá v telefonu (localStorage), fotky v IndexedDB. Nic se neodesílá.
 - Rodičovské nastavení: „Pro rodiče“ na úvodní obrazovce, vstup přes příklad 7 × 8.
+
+## Zveřejnění (GitHub Pages)
+
+Hra běží na https://liberskelahudky.github.io/strazci-rima/ z větve `gh-pages`, kam se nahrává obsah `dist/` po `npm run build`.
+
+## Ukládání postupu
+
+- Po každé změně se postup uloží do localStorage i do IndexedDB (dvě nezávislé kopie). Při startu se použije novější.
+- Každý den se dělá záloha (posledních 14 dní); denní záloha se nepřepíše stavem s menším počtem denárů.
+- Před resetem hry se uloží záloha „Před resetem“.
+- Aplikace žádá prohlížeč o trvalé úložiště (`navigator.storage.persist`).
+- V rodičovském nastavení jde zálohu zkopírovat jako kód, stáhnout jako soubor a obnovit (i v jiném telefonu).

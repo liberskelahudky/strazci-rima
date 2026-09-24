@@ -4,6 +4,7 @@ import { go } from '../lib/router'
 import { PLACES } from '../data'
 import { czk, denaru } from '../lib/format'
 import { clearPhotos } from '../state/photos'
+import { BackupSection } from './Backup'
 import { Coin } from '../components/Ornaments'
 import { TopBar } from '../components/UI'
 
@@ -131,14 +132,16 @@ export function Parent() {
             </p>
           </Section>
 
+          <BackupSection />
+
           <Section title="Začít znovu">
-            <p style={{ fontSize: 14, color: 'var(--ink-2)', fontWeight: 600 }}>Smaže denáry, splněné mise, pečetě a fotky. Nastavení zůstane.</p>
+            <p style={{ fontSize: 14, color: 'var(--ink-2)', fontWeight: 600 }}>Smaže denáry, splněné mise, pečetě a fotky. Nastavení zůstane. Stav před resetem se uloží do zálohy, takže jde vrátit.</p>
             <button
               className="btn-sand"
               style={confirmReset ? { background: 'var(--red)', color: '#fff', boxShadow: '0 4px 0 var(--red-shadow)' } : undefined}
               onClick={async () => {
                 if (!confirmReset) return setConfirmReset(1)
-                reset()
+                reset(state)
                 await clearPhotos().catch(() => {})
                 setConfirmReset(0)
                 go('')

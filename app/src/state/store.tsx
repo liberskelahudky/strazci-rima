@@ -2,9 +2,9 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useReducer,
 import { CHAPTERS, nextChapter, rankFor } from '../data'
 import { todayKey } from '../lib/format'
 import { playCoin } from '../lib/sound'
+import { readBackup, readLocal, requestPersistence, writeBackup, writeLocal, writeNamed } from './persist'
 
-// Postup se ukládá lokálně – hra funguje offline a bez účtu.
-const KEY = 'strazci-rima:v1'
+// Postup se ukládá lokálně (localStorage + záložní kopie v IndexedDB) – hra funguje offline a bez účtu.
 
 export interface LedgerEntry {
   id: string
@@ -33,6 +33,7 @@ export interface GameState {
   revealed: string[]
   boss: Record<string, { score: number; at: number }>
   finale: { at: number } | null
+  savedAt: number
 }
 
 const initial: GameState = {
@@ -45,6 +46,7 @@ const initial: GameState = {
   revealed: ['vlcice'],
   boss: {},
   finale: null,
+  savedAt: 0,
 }
 
 type Action =
@@ -59,10 +61,23 @@ type Action =
   | { t: 'settings'; patch: Partial<Settings> }
   | { t: 'introSeen' }
   | { t: 'reset' }
+  | { t: 'load'; data: Record<string, unknown> }
 
 const entry = (label: string, sub: string, amount: number, id = label): LedgerEntry => ({ id, label, sub, amount, at: Date.now() })
 
+function normalize(data: Record<string, unknown>): GameState {
+  const d = data as Partial<GameState>
+  return { ...initial, ...d, settings: { ...initial.settings, ...(d.settings ?? {}) }, savedAt: Number(d.savedAt) || Date.now() }
+}
+
+// Každá změna dostane časové razítko – podle něj se při startu vybere nejnovější kopie.
 function reducer(s: GameState, a: Action): GameState {
+  if (a.t === 'load') return normalize(a.data)
+  const next = apply(s, a)
+  return next === s ? s : { ...next, savedAt: Date.now() }
+}
+
+function apply(s: GameState, a: Exclude<Action, { t: 'load' }>): GameState {
   switch (a.t) {
     case 'complete':
       if (s.done[a.id]) return s
@@ -99,16 +114,8 @@ function reducer(s: GameState, a: Action): GameState {
 }
 
 function load(): GameState {
-  try {
-    const raw = localStorage.getItem(KEY)
-    if (raw) {
-      const parsed = JSON.parse(raw)
-      return { ...initial, ...parsed, settings: { ...initial.settings, ...parsed.settings } }
-    }
-  } catch {
-    /* poškozená data → začít znovu */
-  }
-  return initial
+  const local = readLocal()
+  return local ? normalize(local.data) : initial
 }
 
 interface Reward {
@@ -121,13 +128,23 @@ function useGameValue() {
   const [state, dispatch] = useReducer(reducer, undefined, load)
   const [reward, setReward] = useState<Reward | null>(null)
 
+  const [ready, setReady] = useState(false)
+
+  // Start: požádat o trvalé úložiště a porovnat localStorage se zálohou v IndexedDB
   useEffect(() => {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(state))
-    } catch {
-      /* úložiště plné nebo zakázané */
-    }
-  }, [state])
+    void requestPersistence()
+    void readBackup().then((b) => {
+      if (b && b.savedAt > state.savedAt && b.data && typeof b.data === 'object') dispatch({ t: 'load', data: b.data as Record<string, unknown> })
+      setReady(true)
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (!state.savedAt) return
+    writeLocal(state)
+    if (ready) void writeBackup(state)
+  }, [state, ready])
 
   const total = Math.max(0, state.ledger.reduce((sum, e) => sum + e.amount, 0))
   const rank = rankFor(total, !!state.finale)
@@ -165,7 +182,11 @@ function useGameValue() {
       unvisit: (place: string) => dispatch({ t: 'unvisit', place }),
       settings: (patch: Partial<Settings>) => dispatch({ t: 'settings', patch }),
       introSeen: () => dispatch({ t: 'introSeen' }),
-      reset: () => dispatch({ t: 'reset' }),
+      reset: (current: GameState) => {
+        void writeNamed('before-reset', { ...current, savedAt: current.savedAt || Date.now() })
+        dispatch({ t: 'reset' })
+      },
+      restore: (data: Record<string, unknown>) => dispatch({ t: 'load', data: { ...data, savedAt: Date.now() } }),
       dismissReward: () => setReward(null),
     }),
     [celebrate],
