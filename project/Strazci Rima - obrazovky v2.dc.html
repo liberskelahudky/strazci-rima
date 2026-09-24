@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#D8CDB8;font-family:Manrope,sans-serif;color:#2A1D14}
+a{color:#9E2B25}a:hover{color:#6F1B17}
+</style>
+</helmet>
+<section style="padding:64px 72px 96px;display:flex;flex-direction:column;gap:48px">
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <div style="font-size:14px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7A5A3A">Grafický návrh · mobil · v2 — pohádkovější</div>
+    <div style="font-family:'Cinzel Decorative',serif;font-weight:900;font-size:56px;letter-spacing:.02em;color:#2A1D14">Strážci Říma</div>
+    <div style="font-size:18px;color:#5A4330">Svitky, vavříny, pečeti, hvězdy a průvodkyně vlčice Lupa. Předchozí verze: Strazci Rima - obrazovky.dc.html</div>
+  </header>
+
+  <div style="display:flex;flex-wrap:wrap;gap:56px 48px;align-items:flex-start">
+
+    <!-- 01 SPLASH -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">01 · SPLASH</div>
+      <div data-screen-label="01 Splash" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:linear-gradient(180deg,#1E140D 0%,#3A1A14 38%,#8A3A1E 62%,#D9A24A 78%,#2A1D14 78.2%,#2A1D14 100%);position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <svg style="position:absolute;left:34px;top:70px" width="14" height="14" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+        <svg style="position:absolute;left:310px;top:92px" width="20" height="20" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+        <svg style="position:absolute;left:80px;top:150px" width="9" height="9" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#EFCB76"></path></svg>
+        <svg style="position:absolute;left:336px;top:210px" width="10" height="10" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#EFCB76"></path></svg>
+        <svg style="position:absolute;left:24px;top:260px" width="12" height="12" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+        <div style="position:absolute;left:95px;top:60px;width:180px;height:300px;border-radius:180px 180px 18px 18px;padding:5px;background:linear-gradient(#F8DE93,#A77A22);box-shadow:0 0 50px rgba(248,222,147,.35)">
+          <div style="width:100%;height:100%;border-radius:175px 175px 14px 14px;overflow:hidden;position:relative;box-shadow:inset 0 0 0 3px #5E410F">
+            <image-slot id="v2-splash-hero" shape="rect" placeholder="Ilustrace: Saša a Bertík (knižní styl)"></image-slot>
+          </div>
+        </div>
+        <svg style="position:absolute;left:48px;top:230px" width="46" height="104" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#EFCB76" stroke-width="2.5"></path><g fill="#EFCB76"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse><ellipse cx="34" cy="64" rx="3.5" ry="8" transform="rotate(40 34 64)"></ellipse><ellipse cx="27" cy="48" rx="3.5" ry="8" transform="rotate(30 27 48)"></ellipse><ellipse cx="25" cy="32" rx="3.5" ry="8" transform="rotate(25 25 32)"></ellipse></g></svg>
+        <svg style="position:absolute;left:276px;top:230px;transform:scaleX(-1)" width="46" height="104" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#EFCB76" stroke-width="2.5"></path><g fill="#EFCB76"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse><ellipse cx="34" cy="64" rx="3.5" ry="8" transform="rotate(40 34 64)"></ellipse><ellipse cx="27" cy="48" rx="3.5" ry="8" transform="rotate(30 27 48)"></ellipse><ellipse cx="25" cy="32" rx="3.5" ry="8" transform="rotate(25 25 32)"></ellipse></g></svg>
+        <svg style="position:absolute;left:0;top:520px" width="370" height="130" viewBox="0 0 370 130"><g fill="#2A1D14"><rect x="0" y="92" width="370" height="40"></rect><path d="M10 130V70H70V130Z"></path><rect x="14" y="60" width="52" height="10"></rect><path d="M120 130V74H132A46 46 0 0 1 224 74H236V130Z"></path><rect x="176" y="18" width="4" height="14"></rect><rect x="250" y="54" width="110" height="76" rx="4"></rect><rect x="84" y="50" width="10" height="80"></rect><rect x="100" y="50" width="10" height="80"></rect><rect x="80" y="44" width="34" height="8"></rect></g><g fill="#D9A24A"><rect x="262" y="66" width="12" height="18" rx="6"></rect><rect x="284" y="66" width="12" height="18" rx="6"></rect><rect x="306" y="66" width="12" height="18" rx="6"></rect><rect x="328" y="66" width="12" height="18" rx="6"></rect><rect x="262" y="96" width="12" height="18" rx="6"></rect><rect x="284" y="96" width="12" height="18" rx="6"></rect><rect x="306" y="96" width="12" height="18" rx="6"></rect><rect x="328" y="96" width="12" height="18" rx="6"></rect></g></svg>
+        <div style="position:absolute;left:0;right:0;top:380px;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <div style="font-family:'Cinzel Decorative',serif;font-weight:900;font-size:46px;line-height:.95;color:#FFF3D6;text-align:center;text-shadow:0 3px 0 #5E1713,0 0 24px rgba(248,222,147,.5)">Strážci<br>Říma</div>
+          <div style="padding:9px 34px;background:#9E2B25;clip-path:polygon(0 0,100% 0,92% 50%,100% 100%,0 100%,8% 50%);font-size:15px;font-weight:800;color:#FFE9C2;letter-spacing:.04em">Tajemství ztracených denárů</div>
+        </div>
+        <div style="position:absolute;left:24px;right:24px;bottom:40px;display:flex;flex-direction:column;align-items:center;gap:14px">
+          <div style="width:100%;height:66px;border-radius:20px;background:#9E2B25;box-shadow:inset 0 0 0 3px #9E2B25,inset 0 0 0 5px #EFCB76,0 5px 0 #5E1713;display:flex;align-items:center;justify-content:center;gap:12px;font-size:20px;font-weight:800;color:#FFF6E6;cursor:pointer">
+            <span style="width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>Začít výpravu
+          </div>
+          <div style="font-size:14px;font-weight:600;color:#A58E73">Pro rodiče</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 HOME -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">02 · DOMOV</div>
+      <div data-screen-label="02 Domov" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:radial-gradient(circle at 20% 0%,#FBF3E2,#EDE0C6 70%);display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="padding:50px 20px 0;display:flex;align-items:center;gap:10px">
+          <div style="position:relative;width:74px;height:66px;display:flex;align-items:center;justify-content:center">
+            <svg style="position:absolute;left:0;top:2px" width="28" height="62" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+            <svg style="position:absolute;right:0;top:2px;transform:scaleX(-1)" width="28" height="62" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+            <div style="width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C4453C,#9E2B25 60%,#6F1B17);box-shadow:inset 0 0 0 3px #B8392F,inset 0 0 0 5px rgba(255,220,200,.35),0 3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:17px;color:#F6D9CF">II</div>
+          </div>
+          <div style="display:flex;flex-direction:column;flex:1">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#9E2B25">HODNOST</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-weight:900;font-size:21px">Průzkumníci</div>
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#5A4330;text-align:right">Saša<br>&amp; Bertík</div>
+        </div>
+        <div style="margin:14px 18px 0;display:flex;align-items:flex-end;gap:10px">
+          <div style="width:58px;height:58px;flex:none;border-radius:50%;padding:3px;background:linear-gradient(#EFCB76,#A77A22)"><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><image-slot id="v2-lupa-home" shape="circle" placeholder="Lupa"></image-slot></div></div>
+          <div style="flex:1;padding:12px 14px;border-radius:18px 18px 18px 4px;background:#FFFFFF;box-shadow:inset 0 0 0 2px #E3C99A;font-size:15px;font-weight:700;line-height:1.35">V aréně se dnes něco šustne. Jdete se podívat?</div>
+        </div>
+        <div style="margin:14px 18px 0;border-radius:24px;background:#2A1D14;color:#F2EADB;position:relative;overflow:hidden">
+          <svg style="display:block" width="354" height="12"><defs><pattern id="mq-home" width="24" height="12" patternUnits="userSpaceOnUse"><path d="M0 11H20V1H4V8H14V4" fill="none" stroke="#C8962E" stroke-width="2"></path></pattern></defs><rect width="354" height="12" fill="url(#mq-home)"></rect></svg>
+          <svg style="position:absolute;right:26px;top:30px" width="14" height="14" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+          <svg style="position:absolute;right:60px;top:56px" width="8" height="8" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#EFCB76"></path></svg>
+          <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 55%,#80581A);box-shadow:inset 0 0 0 3px #A77A22,inset 0 0 0 6px #EFCB76,0 3px 0 #5E410F,0 0 26px rgba(248,222,147,.35);display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:24px;color:#5E410F">D</div>
+              <div style="display:flex;flex-direction:column">
+                <div style="font-size:12px;font-weight:800;letter-spacing:.14em;color:#E3C99A">SPOLEČNÁ POKLADNICE</div>
+                <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:Cinzel,serif;font-weight:900;font-size:46px;line-height:1">47</span><span style="font-size:17px;font-weight:700;color:#E3C99A">denárů</span></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="flex:1;height:14px;border-radius:7px;background:#4A3626;overflow:hidden"><div style="width:78%;height:100%;border-radius:7px;background:linear-gradient(90deg,#A77A22,#F8DE93)"></div></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:#1A120C;box-shadow:inset 0 0 0 2px #C8962E;display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:15px;color:#C8962E">?</div>
+            </div>
+            <div style="font-size:14px;font-weight:600;color:#E3C99A;margin-top:-6px">Ještě 13 denárů do tajemství</div>
+          </div>
+        </div>
+        <div style="padding:16px 18px 0;display:flex;flex-direction:column;gap:12px">
+          <div style="height:86px;border-radius:22px;background:#9E2B25;box-shadow:inset 0 0 0 4px #9E2B25,inset 0 0 0 6px #EFCB76,0 5px 0 #5E1713;padding:0 24px;display:flex;align-items:center;justify-content:space-between;color:#FFF6E6;cursor:pointer">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:21px;font-weight:800">Pokračovat v cestě</span><span style="font-size:14px;font-weight:600;color:#F6CFC4">Aréna gladiátorů · 3 mise</span></div>
+            <span style="font-size:28px;font-weight:800;color:#F8DE93">→</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="height:100px;border-radius:22px;background:#E3C99A;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 2px #F4E4C1,0 4px 0 #BFA06C">
+              <svg width="30" height="34" viewBox="0 0 30 34"><g fill="#7A5A3A"><rect x="2" y="0" width="26" height="5" rx="1"></rect><rect x="5" y="6" width="20" height="3"></rect><rect x="7" y="10" width="3" height="18"></rect><rect x="13.5" y="10" width="3" height="18"></rect><rect x="20" y="10" width="3" height="18"></rect><rect x="3" y="29" width="24" height="5" rx="1"></rect></g></svg>
+              <span style="font-size:18px;font-weight:800">Místa</span>
+            </div>
+            <div style="height:100px;border-radius:22px;background:#E3C99A;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 2px #F4E4C1,0 4px 0 #BFA06C">
+              <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="none" stroke="#7A5A3A" stroke-width="2.5"></circle><path d="M17 4L20 17L17 30L14 17Z" fill="#9E2B25"></path><path d="M4 17L17 14L30 17L17 20Z" fill="#7A5A3A"></path></svg>
+              <span style="font-size:18px;font-weight:800">Side questy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 MAPA -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">03 · MAPA PUTOVÁNÍ</div>
+      <div data-screen-label="03 Mapa putování" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:#2A1D14;display:flex;flex-direction:column;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="padding:50px 22px 14px;display:flex;align-items:center;justify-content:space-between;color:#F2EADB">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#E3C99A">SVITEK VÝPRAVY</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-weight:900;font-size:26px">Cesta Strážců</div>
+          </div>
+          <svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#C8962E" stroke-width="1.5"></circle><circle cx="23" cy="23" r="15" fill="none" stroke="#C8962E" stroke-width="1" stroke-dasharray="2 3"></circle><path d="M23 2L26 20L23 23L20 20Z" fill="#9E2B25"></path><path d="M23 44L26 26L23 23L20 26Z" fill="#E3C99A"></path><path d="M2 23L20 20L23 23L20 26Z" fill="#E3C99A"></path><path d="M44 23L26 20L23 23L26 26Z" fill="#E3C99A"></path></svg>
+        </div>
+        <div style="height:22px;margin:0 8px;border-radius:11px;background:linear-gradient(180deg,#C9A96E,#F4E4C1 45%,#A88752);box-shadow:0 3px 6px rgba(0,0,0,.4);position:relative;z-index:2"></div>
+        <div style="flex:1;margin:-8px 18px;background:radial-gradient(circle at 30% 30%,#FBF1DA,#E9D7B2 80%);position:relative;box-shadow:inset 0 0 30px rgba(122,90,58,.35)">
+          <svg style="position:absolute;left:0;top:0" width="334" height="690"><path d="M100 50 C 180 50, 240 80, 240 140 S 100 190, 100 240 S 240 290, 240 340 S 100 380, 100 430 S 240 470, 240 520 S 167 550, 167 586" fill="none" stroke="#9C7A4E" stroke-width="3.5" stroke-dasharray="2 9" stroke-linecap="round"></path></svg>
+          <svg style="position:absolute;left:280px;top:40px" width="14" height="14" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <svg style="position:absolute;left:30px;top:330px" width="10" height="10" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <svg style="position:absolute;left:290px;top:600px" width="12" height="12" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <div style="position:absolute;left:70px;top:20px;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C4453C,#9E2B25 60%,#6F1B17);box-shadow:inset 0 0 0 4px #B8392F,inset 0 0 0 6px rgba(255,220,200,.35),0 3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:20px;color:#F6D9CF">I</div>
+          <div style="position:absolute;left:142px;top:30px;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Zkouška vlčice</span><span style="font-size:13px;font-weight:700;color:#7A5A3A">zpečetěno</span></div>
+          <div style="position:absolute;left:210px;top:110px;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C4453C,#9E2B25 60%,#6F1B17);box-shadow:inset 0 0 0 4px #B8392F,inset 0 0 0 6px rgba(255,220,200,.35),0 3px 6px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:20px;color:#F6D9CF">II</div>
+          <div style="position:absolute;left:14px;top:120px;width:184px;text-align:right;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Caesarova stopa</span><span style="font-size:13px;font-weight:700;color:#7A5A3A">zpečetěno</span></div>
+          <div style="position:absolute;left:52px;top:192px;width:96px;height:96px;border-radius:50%;background:conic-gradient(from 0deg,rgba(248,222,147,.7) 0 8deg,transparent 8deg 22deg,rgba(248,222,147,.7) 22deg 30deg,transparent 30deg 45deg);opacity:.8"></div>
+          <div style="position:absolute;left:60px;top:200px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 55%,#80581A);box-shadow:inset 0 0 0 4px #A77A22,inset 0 0 0 7px #EFCB76,0 0 0 6px rgba(200,150,46,.3),0 4px 0 #5E410F;display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:22px;color:#5E410F">III</div>
+          <div style="position:absolute;left:152px;top:210px;display:flex;flex-direction:column;gap:4px"><span style="align-self:flex-start;padding:3px 14px;background:#9E2B25;clip-path:polygon(0 0,100% 0,90% 50%,100% 100%,0 100%,10% 50%);font-size:11px;font-weight:800;letter-spacing:.12em;color:#FFE9C2">JSTE TADY</span><span style="font-size:17px;font-weight:800;color:#7A2019">Aréna gladiátorů</span></div>
+          <div style="position:absolute;left:206px;top:306px;width:68px;height:68px;border-radius:50%;background:#2A1D14;box-shadow:inset 0 0 0 3px #C8962E,0 0 20px rgba(200,150,46,.45);display:flex;align-items:center;justify-content:center"><svg width="20" height="28" viewBox="0 0 20 28"><circle cx="10" cy="8" r="7" fill="#C8962E"></circle><path d="M6 12H14L16 27H4Z" fill="#C8962E"></path></svg></div>
+          <div style="position:absolute;left:14px;top:318px;width:180px;text-align:right;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Tajná mise</span><span style="font-size:13px;font-weight:700;color:#7A5A3A">za 60 denárů</span></div>
+          <div style="position:absolute;left:74px;top:404px;width:52px;height:52px;border-radius:50%;border:3px dashed #9C7A4E;box-sizing:border-box;background:#EFE0C0"></div>
+          <div style="position:absolute;left:142px;top:410px;display:flex;flex-direction:column;opacity:.7"><span style="font-size:16px;font-weight:800;letter-spacing:.2em">? ? ?</span><span style="font-size:13px;font-weight:700;color:#7A5A3A">80 denárů</span></div>
+          <div style="position:absolute;left:214px;top:494px;width:52px;height:52px;border-radius:50%;border:3px dashed #9C7A4E;box-sizing:border-box;background:#EFE0C0"></div>
+          <div style="position:absolute;left:14px;top:500px;width:186px;text-align:right;display:flex;flex-direction:column;opacity:.7"><span style="font-size:16px;font-weight:800;letter-spacing:.2em">? ? ?</span><span style="font-size:13px;font-weight:700;color:#7A5A3A">100 denárů</span></div>
+          <div style="position:absolute;left:107px;top:546px;width:120px;height:80px;display:flex;align-items:center;justify-content:center">
+            <svg style="position:absolute;left:4px;top:0" width="34" height="76" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+            <svg style="position:absolute;right:4px;top:0;transform:scaleX(-1)" width="34" height="76" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+            <div style="width:56px;height:56px;border-radius:50%;border:3px dashed #9C7A4E;box-sizing:border-box;background:#EFE0C0;display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:13px;color:#9C7A4E">SPQR</div>
+          </div>
+          <div style="position:absolute;left:0;right:0;top:622px;text-align:center;font-family:'Cinzel Decorative',serif;font-weight:900;font-size:15px;color:#7A5A3A">Strážci Říma</div>
+        </div>
+        <div style="height:22px;margin:0 8px 26px;border-radius:11px;background:linear-gradient(180deg,#C9A96E,#F4E4C1 45%,#A88752);box-shadow:0 -3px 6px rgba(0,0,0,.3);position:relative;z-index:2"></div>
+      </div>
+    </div>
+
+    <!-- 04 TIPOVAČKA -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">04 · TIPOVAČKA (klikací)</div>
+      <div data-screen-label="04 Tipovačka" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:radial-gradient(circle at 50% 0%,#FBF3E2,#EDE0C6 70%);display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="padding:50px 20px 0;display:flex;align-items:center;justify-content:space-between">
+          <div style="width:46px;height:46px;border-radius:14px;background:#E3C99A;box-shadow:0 3px 0 #BFA06C;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800">←</div>
+          <div style="display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:99px;background:#2A1D14;color:#F2EADB;font-weight:800;font-size:15px"><span style="width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>+3</div>
+        </div>
+        <div style="margin:18px 14px 0;position:relative">
+          <div style="height:18px;border-radius:9px;background:linear-gradient(180deg,#C9A96E,#F4E4C1 45%,#A88752);position:relative;z-index:1"></div>
+          <div style="margin:-6px 10px 0;padding:22px 20px 20px;background:radial-gradient(circle at 30% 20%,#FFF8E8,#F1E2BF);box-shadow:inset 0 0 20px rgba(122,90,58,.25);display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#9E2B25">CAESAROVO TAJEMSTVÍ</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-weight:900;font-size:27px;line-height:1.12;text-wrap:pretty">Byl Julius Caesar římský císař?</div>
+            <svg width="120" height="12" viewBox="0 0 120 12"><path d="M0 6H48M72 6H120" stroke="#C8962E" stroke-width="1.5"></path><path d="M60 0L66 6L60 12L54 6Z" fill="#9E2B25"></path></svg>
+          </div>
+          <div style="margin:-2px 0 0;height:18px;border-radius:9px;background:linear-gradient(180deg,#C9A96E,#F4E4C1 45%,#A88752);position:relative;z-index:1"></div>
+        </div>
+        <div style="padding:18px 18px 0;display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ options }}" as="o" hint-placeholder-count="3">
+            <div onClick="{{ o.pick }}" style="min-height:62px;border-radius:18px;padding:0 14px;display:flex;align-items:center;gap:14px;font-size:18px;font-weight:700;cursor:pointer;background:{{ o.bg }};color:#2A1D14;box-shadow:0 4px 0 {{ o.shadow }}">
+              <span style="width:36px;height:36px;flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C4453C,#9E2B25 60%,#6F1B17);box-shadow:inset 0 0 0 2px #B8392F;display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:14px;color:#F6D9CF">{{ o.num }}</span>{{ o.label }}
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:16px 18px 0;padding:16px 18px;border-radius:20px;background:#2A1D14;box-shadow:inset 0 0 0 2px #C8962E;color:#F2EADB;display:flex;flex-direction:column;gap:6px;position:relative">
+            <svg style="position:absolute;right:16px;top:14px" width="16" height="16" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+            <div style="font-size:18px;font-weight:800;color:#F8DE93">{{ feedbackTitle }}</div>
+            <div style="font-size:15px;line-height:1.45;font-weight:500">Caesar byl slavný vojevůdce a diktátor. Prvním císařem byl až jeho adoptivní syn Augustus.</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:18px 18px 0;display:flex;align-items:flex-end;gap:10px">
+            <div style="width:54px;height:54px;flex:none;border-radius:50%;padding:3px;background:linear-gradient(#EFCB76,#A77A22)"><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><image-slot id="v2-lupa-quiz" shape="circle" placeholder="Lupa"></image-slot></div></div>
+            <div style="flex:1;padding:12px 14px;border-radius:18px 18px 18px 4px;background:#FFFFFF;box-shadow:inset 0 0 0 2px #E3C99A;font-size:15px;font-weight:700;line-height:1.35">Poraďte se spolu. Špatně tipnout nevadí!</div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- 05 PAMÁTKA -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">05 · PAMÁTKOVÁ KARTA</div>
+      <div data-screen-label="05 Koloseum" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:radial-gradient(circle at 50% 40%,#FBF3E2,#EDE0C6 70%);display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="height:300px;position:relative;clip-path:polygon(0 0,100% 0,100% 92%,92% 96%,84% 92%,74% 97%,63% 93%,52% 98%,41% 93%,30% 97%,20% 92%,10% 96%,0 93%)">
+          <image-slot id="v2-koloseum-foto" shape="rect" placeholder="Reálná fotka: Koloseum"></image-slot>
+          <div style="position:absolute;inset:0;box-shadow:inset 0 0 0 6px rgba(200,150,46,.0),inset 0 -60px 60px rgba(42,29,20,.25);pointer-events:none"></div>
+        </div>
+        <div style="margin-top:-38px;display:flex;flex-direction:column;align-items:center;position:relative;gap:2px">
+          <div style="display:flex;align-items:center;gap:4px">
+            <svg width="26" height="58" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse></g></svg>
+            <div style="padding:10px 40px;background:#9E2B25;clip-path:polygon(0 0,100% 0,92% 50%,100% 100%,0 100%,8% 50%);font-family:'Cinzel Decorative',serif;font-weight:900;font-size:28px;color:#FFF3D6">Koloseum</div>
+            <svg style="transform:scaleX(-1)" width="26" height="58" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse></g></svg>
+          </div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#7A5A3A">ARÉNA GLADIÁTORŮ · LEVEL III</div>
+        </div>
+        <div style="padding:14px 18px 0;display:flex;flex-direction:column;gap:12px">
+          <div style="height:56px;border-radius:18px;background:#2A1D14;box-shadow:inset 0 0 0 2px #C8962E,0 4px 0 #1A120C;color:#F8DE93;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>Jsme tady!</div>
+          <div style="padding:14px 16px;border-radius:20px;background:#E3C99A;box-shadow:inset 0 0 0 2px #F4E4C1;display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#7A2019">TIPNĚTE</div>
+            <div style="font-size:18px;font-weight:800;line-height:1.3">Kolik diváků se sem mohlo vejít?</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+              <div style="height:46px;border-radius:14px;background:#FBF3E2;box-shadow:0 3px 0 #BFA06C;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">5 000</div>
+              <div style="height:46px;border-radius:14px;background:#FBF3E2;box-shadow:0 3px 0 #BFA06C;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">50 000</div>
+              <div style="height:46px;border-radius:14px;background:#FBF3E2;box-shadow:0 3px 0 #BFA06C;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">500 000</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="min-height:54px;border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #DCCDB2;padding:0 12px;display:flex;align-items:center;gap:12px"><span style="flex:1;font-size:15px;font-weight:700">Najděte detail, který ukazuje víc pater</span><span style="display:flex;align-items:center;gap:5px;font-weight:800;color:#80581A"><span style="width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>4</span></div>
+            <div style="min-height:54px;border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #DCCDB2;padding:0 12px;display:flex;align-items:center;gap:12px"><span style="flex:1;font-size:15px;font-weight:700">Vymyslete si gladiátorská jména</span><span style="display:flex;align-items:center;gap:5px;font-weight:800;color:#80581A"><span style="width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>3</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 TAJNÁ MISE -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">06 · TAJNÁ MISE (zamčená)</div>
+      <div data-screen-label="06 Tajná mise" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:radial-gradient(circle at 50% 36%,#5A2A1C,#1E140D 65%);color:#F2EADB;position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="position:absolute;left:-65px;top:30px;width:500px;height:500px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(248,222,147,.13) 0 6deg,transparent 6deg 18deg);-webkit-mask:radial-gradient(circle,#000 20%,transparent 70%);mask:radial-gradient(circle,#000 20%,transparent 70%)"></div>
+        <svg style="position:absolute;left:40px;top:80px" width="14" height="14" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+        <svg style="position:absolute;left:300px;top:130px" width="18" height="18" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#F8DE93"></path></svg>
+        <svg style="position:absolute;left:70px;top:420px" width="10" height="10" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#EFCB76"></path></svg>
+        <svg style="position:absolute;left:310px;top:380px" width="12" height="12" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#EFCB76"></path></svg>
+        <div style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;padding:0 28px;box-sizing:border-box">
+          <div style="height:110px"></div>
+          <div style="padding:6px 26px;background:#C8962E;clip-path:polygon(0 0,100% 0,92% 50%,100% 100%,0 100%,8% 50%);font-size:12px;font-weight:800;letter-spacing:.2em;color:#2A1D14">PŘÍSNĚ TAJNÉ</div>
+          <div style="margin-top:44px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C4453C,#9E2B25 55%,#5E1713);box-shadow:inset 0 0 0 8px #B8392F,inset 0 0 0 12px rgba(255,220,200,.25),0 0 0 14px rgba(158,43,37,.2),0 0 60px rgba(248,222,147,.35),0 20px 40px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center">
+            <svg width="54" height="80" viewBox="0 0 20 28"><circle cx="10" cy="8" r="7" fill="#3A0E0B"></circle><path d="M6 12H14L16 27H4Z" fill="#3A0E0B"></path></svg>
+          </div>
+          <div style="margin-top:40px;font-family:'Cinzel Decorative',serif;font-weight:900;font-size:30px;text-align:center;line-height:1.1;text-shadow:0 0 20px rgba(248,222,147,.35)">Tajná galská mise</div>
+          <div style="margin-top:12px;font-size:17px;font-weight:500;line-height:1.45;text-align:center;color:#E3C99A;text-wrap:pretty">V Galii zmizelo něco důležitého. Obelix by věděl co.</div>
+          <div style="flex:1"></div>
+          <div style="width:100%;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#E3C99A"><span>47 z 60 denárů</span><span>chybí 13</span></div>
+            <div style="height:14px;border-radius:7px;background:#3A2A1C;overflow:hidden"><div style="width:78%;height:100%;border-radius:7px;background:linear-gradient(90deg,#A77A22,#F8DE93)"></div></div>
+          </div>
+          <div style="margin:22px 0 44px;width:100%;height:64px;border-radius:18px;background:#3A2A1C;box-shadow:inset 0 0 0 2px #5A4330;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#A58E73">Odemkne se za 60 denárů</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 POKLADNICE -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;font-weight:800;letter-spacing:.14em;color:#5A4330">07 · POKLADNICE</div>
+      <div data-screen-label="07 Pokladnice" style="width:390px;height:844px;border-radius:48px;border:10px solid #1A120C;overflow:hidden;background:radial-gradient(circle at 50% 22%,#FFF6DF,#EDE0C6 60%);display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(42,29,20,.35)">
+        <div style="position:absolute;left:-55px;top:-60px;width:480px;height:480px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(200,150,46,.16) 0 7deg,transparent 7deg 20deg);-webkit-mask:radial-gradient(circle,#000 15%,transparent 65%);mask:radial-gradient(circle,#000 15%,transparent 65%)"></div>
+        <div style="padding:50px 22px 0;font-size:12px;font-weight:800;letter-spacing:.16em;color:#9E2B25;text-align:center;position:relative">SPOLEČNÁ POKLADNICE</div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding:14px 0 16px;gap:4px;position:relative">
+          <svg style="position:absolute;left:70px;top:40px" width="16" height="16" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <svg style="position:absolute;left:290px;top:20px" width="20" height="20" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <svg style="position:absolute;left:300px;top:130px" width="10" height="10" viewBox="0 0 20 20"><path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8Z" fill="#C8962E"></path></svg>
+          <div style="position:relative;width:220px;height:160px">
+            <div style="position:absolute;left:10px;top:78px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 55%,#80581A);box-shadow:inset 0 0 0 3px #A77A22,inset 0 0 0 6px #EFCB76,0 4px 0 #5E410F;transform:rotate(-14deg)"></div>
+            <div style="position:absolute;right:8px;top:70px;width:86px;height:86px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 55%,#80581A);box-shadow:inset 0 0 0 3px #A77A22,inset 0 0 0 6px #EFCB76,0 4px 0 #5E410F;transform:rotate(12deg)"></div>
+            <div style="position:absolute;left:50px;top:0;width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 55%,#80581A);box-shadow:inset 0 0 0 4px #A77A22,inset 0 0 0 8px #EFCB76,0 5px 0 #5E410F,0 16px 26px rgba(42,29,20,.3),0 0 40px rgba(248,222,147,.6);display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-weight:900;font-size:26px;color:#5E410F;text-shadow:0 1px 0 #F8DE93">SPQR</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg width="30" height="68" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+            <div style="font-family:Cinzel,serif;font-weight:900;font-size:76px;line-height:1">47</div>
+            <svg style="transform:scaleX(-1)" width="30" height="68" viewBox="0 0 40 90"><path d="M34 88 Q6 60 20 4" fill="none" stroke="#80581A" stroke-width="2.5"></path><g fill="#80581A"><ellipse cx="29" cy="76" rx="4" ry="9" transform="rotate(-50 29 76)"></ellipse><ellipse cx="21" cy="64" rx="4" ry="9" transform="rotate(-40 21 64)"></ellipse><ellipse cx="15" cy="50" rx="4" ry="9" transform="rotate(-25 15 50)"></ellipse><ellipse cx="14" cy="35" rx="4" ry="9" transform="rotate(-10 14 35)"></ellipse><ellipse cx="16" cy="20" rx="4" ry="8" transform="rotate(5 16 20)"></ellipse></g></svg>
+          </div>
+          <div style="font-size:18px;font-weight:700;color:#5A4330">denárů</div>
+          <sc-if value="{{ showCzk }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:6px;padding:6px 26px;background:#9E2B25;clip-path:polygon(0 0,100% 0,93% 50%,100% 100%,0 100%,7% 50%);font-size:15px;font-weight:800;color:#FFE9C2">= {{ czk }} Kč na odměnu</div>
+          </sc-if>
+        </div>
+        <div style="padding:0 18px;display:flex;flex-direction:column;gap:8px;position:relative">
+          <div style="display:flex;align-items:center;gap:10px;padding:0 4px 4px"><div style="flex:1;height:1px;background:#C8962E"></div><span style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#7A5A3A">NAPOSLEDY ZÍSKANÉ</span><div style="flex:1;height:1px;background:#C8962E"></div></div>
+          <div style="min-height:56px;border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #DCCDB2;padding:0 14px;display:flex;align-items:center;gap:12px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Večerní boss fight</span><span style="font-size:13px;font-weight:600;color:#5A4330">5 z 5 úkolů týmově</span></div><span style="display:flex;align-items:center;gap:6px;font-family:Cinzel,serif;font-weight:900;font-size:20px;color:#80581A"><span style="width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>+10</span></div>
+          <div style="min-height:56px;border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #DCCDB2;padding:0 14px;display:flex;align-items:center;gap:12px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Pantheon: oculus</span><span style="font-size:13px;font-weight:600;color:#5A4330">Pozorovačka</span></div><span style="display:flex;align-items:center;gap:6px;font-family:Cinzel,serif;font-weight:900;font-size:20px;color:#80581A"><span style="width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>+5</span></div>
+          <div style="min-height:56px;border-radius:16px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #DCCDB2;padding:0 14px;display:flex;align-items:center;gap:12px"><div style="flex:1;display:flex;flex-direction:column"><span style="font-size:16px;font-weight:800">Byl Caesar císař?</span><span style="font-size:13px;font-weight:600;color:#5A4330">Tipovačka</span></div><span style="display:flex;align-items:center;gap:6px;font-family:Cinzel,serif;font-weight:900;font-size:20px;color:#80581A"><span style="width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F8DE93,#C8962E 60%,#80581A)"></span>+3</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCzk&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Rodičovské nastavení&quot;},&quot;denarValue&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:10,&quot;min&quot;:1,&quot;max&quot;:100,&quot;unit&quot;:&quot;Kč&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Rodičovské nastavení&quot;}}">
+class Component extends DCLogic {
+  state = { picked: null };
+  renderVals() {
+    const labels = ['Ano, úplně první', 'Ne, císař nikdy nebyl', 'Byl to galský náčelník'];
+    const p = this.state.picked, answered = p !== null;
+    const options = labels.map((label, i) => {
+      const correct = i === 1, sel = p === i;
+      let bg = '#FFFFFF', shadow = '#DCCDB2';
+      if (answered && correct) { bg = '#EFCB76'; shadow = '#A77A22'; }
+      else if (sel) { bg = '#E3C99A'; shadow = '#BFA06C'; }
+      return { label, num: ['I', 'II', 'III'][i], bg, shadow, pick: () => this.setState({ picked: i }) };
+    });
+    const val = this.props.denarValue ?? 10;
+    return {
+      options, answered, notAnswered: !answered,
+      feedbackTitle: p === 1 ? 'Přesně tak! +3 denáry' : 'Tohle si myslí i spousta dospělých!',
+      showCzk: this.props.showCzk ?? true,
+      czk: (47 * val).toLocaleString('cs-CZ')
+    };
+  }
+}
+</script>
+</body>
+</html>
