@@ -14,8 +14,11 @@ export function Home() {
   // Kapitola, ve které se pokračuje: nejvyšší odemčená, kde zbývají mise
   const chapterLeft = (id: string) => ALL_MISSIONS.filter((m) => m.world === id && !state.done[m.id]).length
   const current = [...unlocked].reverse().find((c) => c.id !== 'sifra' && chapterLeft(c.id) > 0) ?? unlocked[unlocked.length - 1]
-  const left = current ? chapterLeft(current.id) : 0
-  const travelLeft = chapterLeft('cesta')
+  // Dokud rodina nedorazila k první památce, je hlavní úkol cesta a letiště
+  const onTheWay = chapterLeft('cesta') > 0 && Object.keys(state.visited).length === 0
+  const focus = onTheWay ? { id: 'cesta', name: 'Cesta a letiště' } : current
+  const focusLeft = focus ? chapterLeft(focus.id) : 0
+  const upNext = focus ? ALL_MISSIONS.filter((m) => m.world === focus.id && !state.done[m.id]).slice(0, 3) : []
 
   const prevAt = next ? [...CHAPTERS].reverse().find((c) => c.unlockAt <= total)?.unlockAt ?? 0 : 0
   const pct = next ? Math.round(((total - prevAt) / (next.unlockAt - prevAt)) * 100) : 100
@@ -31,7 +34,9 @@ export function Home() {
         ? 'Všechny pečetě jsou vaše. Čeká na vás velká šifra!'
         : hour >= 17 && !bossDone
           ? 'Večer přichází. Troufnete si na boss fight?'
-          : current?.teaser ?? 'Kam se dnes vydáme?'
+          : onTheWay
+            ? 'Vzhůru na cestu! Než dorazíme do Říma, zkuste úkoly na letišti.'
+            : current?.teaser ?? 'Kam se dnes vydáme?'
 
   return (
     <div className="screen bg-trav">
@@ -103,54 +108,50 @@ export function Home() {
               <span style={{ fontSize: 28, color: 'var(--gold-hi)' }}>→</span>
             </button>
           ) : (
-            <button onClick={() => go('mise/' + (current?.id ?? ''))} className="btn-primary" style={{ minHeight: 86, borderRadius: 22, boxShadow: 'inset 0 0 0 4px var(--red), inset 0 0 0 6px var(--gold-lt), 0 5px 0 var(--red-shadow)', justifyContent: 'space-between', padding: '0 24px', textAlign: 'left' }}>
+            <button onClick={() => go('mise/' + (focus?.id ?? ''))} className="btn-primary" style={{ minHeight: 86, borderRadius: 22, boxShadow: 'inset 0 0 0 4px var(--red), inset 0 0 0 6px var(--gold-lt), 0 5px 0 var(--red-shadow)', justifyContent: 'space-between', padding: '0 24px', textAlign: 'left' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <span style={{ fontSize: 21, fontWeight: 800 }}>Pokračovat v cestě</span>
                 <span style={{ fontSize: 14, fontWeight: 600, color: '#F6CFC4' }}>
-                  {current?.name} · {left} {left === 1 ? 'mise' : left >= 2 && left <= 4 ? 'mise' : 'misí'}
+                  {focus?.name} · {focusLeft} {focusLeft >= 1 && focusLeft <= 4 ? 'mise' : 'misí'}
                 </span>
               </div>
               <span style={{ fontSize: 28, fontWeight: 800, color: 'var(--gold-hi)' }}>→</span>
             </button>
           )}
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <button onClick={() => go('mista')} className="tile">
-              <ColumnIcon />
-              <span style={{ fontSize: 18, fontWeight: 800 }}>Místa</span>
-            </button>
-            <button onClick={() => go('mise')} className="tile">
-              <CompassIcon />
-              <span style={{ fontSize: 18, fontWeight: 800 }}>Side questy</span>
-            </button>
-          </div>
+          {upNext.length > 0 && !pendingReveal && !(finaleOpen && !state.finale) && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div className="divider-title"><span>Na řadě</span></div>
+              {upNext.map((m) => (
+                <button key={m.id} onClick={() => go('mise-detail/' + m.id)} className="card-white row" style={{ minHeight: 52 }}>
+                  <span style={{ flex: 1, fontWeight: 800, fontSize: 16 }}>{m.title}</span>
+                  <span className="reward-num" style={{ fontSize: 17 }}><Coin size={16} />+{m.reward}</span>
+                </button>
+              ))}
+            </div>
+          )}
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <button onClick={() => go('boss')} className="card-white row" style={{ borderRadius: 18 }}>
+          {hour >= 17 && !bossDone && (
+            <button onClick={() => go('boss')} className="card-dark row" style={{ borderRadius: 18 }}>
               <Seal size={34} style={{ fontSize: 12 }}>X</Seal>
-              <span style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontWeight: 800, fontSize: 15 }}>Boss fight</span>
-                <span className="row-sub">{bossDone ? 'dnes hotovo' : 'večerní výzva'}</span>
-              </span>
-            </button>
-            <button onClick={() => go('galerie')} className="card-white row" style={{ borderRadius: 18 }}>
-              <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden><rect x="3" y="5" width="18" height="15" rx="2" fill="var(--sand)" /><path d="M3 17l5-5 4 4 3-3 6 6" stroke="var(--ink-3)" strokeWidth="1.8" fill="none" /><circle cx="16" cy="9" r="2" fill="var(--gold)" /></svg>
-              <span style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontWeight: 800, fontSize: 15 }}>Galerie</span>
-                <span className="row-sub">úlovky z cesty</span>
-              </span>
-            </button>
-          </div>
-          {travelLeft > 0 && (
-            <button onClick={() => go('mise/cesta')} className="card-dark row" style={{ borderRadius: 18 }}>
-              <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden><path fill="var(--gold-hi)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg>
               <span style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontWeight: 800, fontSize: 15 }}>Cesta a letiště</span>
-                <span className="row-sub" style={{ color: 'var(--sand)' }}>Praha · Frankfurt · Řím – {travelLeft} {travelLeft === 1 ? 'úkol' : travelLeft <= 4 ? 'úkoly' : 'úkolů'}</span>
+                <span style={{ fontWeight: 800, fontSize: 15 }}>Večerní boss fight</span>
+                <span className="row-sub" style={{ color: 'var(--sand)' }}>5 otázek z dnešního dne · až 10 denárů</span>
               </span>
               <span style={{ color: 'var(--gold-hi)', fontWeight: 800 }}>→</span>
             </button>
           )}
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <button onClick={() => go('mista')} className="tile">
+              <ColumnIcon />
+              <span style={{ fontSize: 18, fontWeight: 800 }}>Památky</span>
+            </button>
+            <button onClick={() => go('mise')} className="tile">
+              <CompassIcon />
+              <span style={{ fontSize: 18, fontWeight: 800 }}>Všechny mise</span>
+            </button>
+          </div>
           {state.finale && (
             <button className="btn-dark" onClick={() => go('certifikat')}><Star size={16} />Certifikát Strážců</button>
           )}

@@ -6,7 +6,7 @@ import { denaru } from '../lib/format'
 import { Coin, Laurel, Seal, Star } from '../components/Ornaments'
 import { PlaceImage } from '../components/Illustrations'
 import { Feedback, PhotoButton, QuizOptions, ReadAloud, RewardBadge, TabBar, TopBar } from '../components/UI'
-import { MissionCard } from './Missions'
+import { MissionList } from './Missions'
 
 // Seznam památek – rodina otevře kartu ručně, bez GPS
 export function Places() {
@@ -126,7 +126,7 @@ export function PlaceCard({ id }: { id: string }) {
 
               {/* 5) + 6) Mise na místě s odměnou */}
               <div className="divider-title"><span>Mise na místě · až {missionsReward} {denaru(missionsReward)}</span></div>
-              {p.missions.map((m) => <MissionCard key={m.id} m={m} hidePlace />)}
+              <MissionList list={p.missions} hidePlace emptyText="Všechny mise tady jsou splněné!" />
 
               {/* 7) Tohle řekni doma */}
               <div className="card-dark" style={{ padding: '16px 18px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>

@@ -40,6 +40,7 @@ export function Treasury() {
         </div>
 
         <div style={{ padding: '0 18px 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <button className="btn-sand" style={{ marginBottom: 6 }} onClick={() => go('galerie')}>Galerie fotek z výpravy</button>
           <div className="divider-title"><span>Naposledy získané</span></div>
           {state.ledger.length === 0 && (
             <div className="card-white" style={{ padding: 16, textAlign: 'center', fontWeight: 700 }}>Pokladnice čeká na první denár. Splňte misi!</div>
