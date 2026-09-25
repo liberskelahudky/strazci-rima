@@ -60,6 +60,7 @@ export interface Mission {
 
 // Side questy – jdou plnit kdekoli v Římě, jsou otevřené od začátku.
 export const SIDE_WORLDS = [
+  { id: 'cesta', name: 'Cesta a letiště' },
   { id: 'zivot', name: 'Jak žil malý Říman' },
   { id: 'stavitele', name: 'Římské vychytávky' },
   { id: 'bohove', name: 'Chrám bohů' },
@@ -352,6 +353,132 @@ export const MISSIONS: Mission[] = [
   {
     id: 'pamet-vecer', world: 'sifra', title: 'Paměť strážců', kind: 'pamet', reward: 4, tags: ['prodva'],
     task: 'Odložte telefon. Řekněte si navzájem pět věcí, které jste se v Římě dozvěděli. Kdo si vzpomene na víc?',
+  },
+
+  // ───────── Side questy: Cesta a letiště (Praha → Frankfurt → Řím) ─────────
+  {
+    id: 'prg-jmeno', world: 'cesta', title: 'Letiště se jménem', kind: 'tip', reward: 2, tags: ['rychle', 'historie'],
+    task: 'Praha: tipněte si, po kom se jmenuje pražské letiště.',
+    quiz: {
+      options: ['Po Václavu Havlovi', 'Po Karlu IV.', 'Po Jaromíru Jágrovi'],
+      correct: 0,
+      explain: 'Letiště Václava Havla Praha nese jméno prvního českého prezidenta od roku 2012. Lidé mu ale pořád často říkají Ruzyně – podle čtvrti, kde leží.',
+    },
+  },
+  {
+    id: 'prg-kod', world: 'cesta', title: 'Tajný kód letišť', kind: 'kviz', reward: 2, tags: ['rychle'],
+    task: 'Praha: každé letiště má třípísmenný kód. Najděte ho na palubní vstupence. Jaký má kód Praha?',
+    quiz: {
+      options: ['PRA', 'PRG', 'CZE'],
+      correct: 1,
+      explain: 'PRG! Frankfurt má kód FRA a hlavní římské letiště Fiumicino FCO. Tyhle kódy najdete i na visačce vašeho kufru.',
+    },
+  },
+  {
+    id: 'prg-tabule', world: 'cesta', title: 'Detektivové u tabule', kind: 'lov', reward: 3, tags: ['rychle', 'prodva'],
+    task: 'Praha: najděte na odletové tabuli svůj let. Zjistěte číslo letu a bránu (gate), odkud letíte.',
+    input: 'Číslo letu a gate…',
+    fact: 'Číslo letu začíná kódem letecké společnosti. Lufthansa má LH, České aerolinie OK, ITA Airways AZ.',
+  },
+  {
+    id: 'prg-letadla', world: 'cesta', title: 'Počítání ocasů', kind: 'pozorovacka', reward: 3, tags: ['foto'],
+    task: 'Praha: z okna u brány spočítejte letadla. Kolik různých leteckých společností poznáte podle barev na ocasu?',
+    input: 'Letadel / společností…', photo: true,
+  },
+  {
+    id: 'palubka', world: 'cesta', title: 'Tajemství palubní vstupenky', kind: 'detektivka', reward: 3, tags: ['rychle', 'prodva'],
+    task: 'Prohlédněte si palubní vstupenku. Najděte číslo sedadla, čas nástupu (boarding) a kód cílového letiště.',
+    fact: 'Písmeno u sedadla prozradí, kde sedíte: A a F bývají u okna, C a D u uličky.',
+  },
+  {
+    id: 'let-usi', world: 'cesta', title: 'Proč zalehají uši?', kind: 'kviz', reward: 2, tags: ['rychle'],
+    task: 'V letadle: proč vám při startu a přistání zalehají uši?',
+    quiz: {
+      options: ['Mění se tlak vzduchu', 'Motory jsou moc hlasité', 'V letadle je zima'],
+      correct: 0,
+      explain: 'Při stoupání a klesání se mění tlak vzduchu v kabině. Pomůže polykat, zívat nebo žvýkat – ucho se tím vyrovná.',
+    },
+  },
+  {
+    id: 'let-vyska', world: 'cesta', title: 'Nad mraky', kind: 'tip', reward: 2, tags: ['rychle'],
+    task: 'V letadle: tipněte si, jak vysoko letí dopravní letadlo.',
+    quiz: {
+      options: ['Asi 1 km', 'Asi 10 km', 'Asi 100 km'],
+      correct: 1,
+      explain: 'Kolem 10 kilometrů – to je víc než Mount Everest. Venku je tam mráz kolem −50 °C, a přesto v letadle sedíte v tričku.',
+    },
+  },
+  {
+    id: 'let-mraky', world: 'cesta', title: 'Mraky shora', kind: 'foto', reward: 2, tags: ['foto', 'rychle'],
+    task: 'V letadle: vyfoťte mraky shora. Jaký tvar vám připomínají?', photo: true, input: 'Vypadají jako…',
+  },
+  {
+    id: 'let-cary', world: 'cesta', title: 'Bílé čáry na nebi', kind: 'tip', reward: 2, tags: ['rychle', 'venku'],
+    task: 'Tipněte si: co jsou ty bílé čáry, které za sebou nechávají letadla?',
+    quiz: {
+      options: ['Kouř z motoru', 'Zmrzlá vodní pára', 'Barva na reklamu'],
+      correct: 1,
+      explain: 'Jsou to kondenzační stopy. Z motoru vychází horká vlhká pára, která v mrazu vysoko nad zemí zmrzne na drobné krystalky ledu – vznikne vlastně umělý mrak.',
+    },
+  },
+  {
+    id: 'let-abeceda', world: 'cesta', title: 'Mluvte jako piloti', kind: 'tvoriva', reward: 3, tags: ['prodva'],
+    task: 'Hláskujte svá jména pilotní abecedou. A = Alfa, B = Bravo, C = Charlie, D = Delta, E = Echo…',
+    input: 'Moje jméno pilotsky…',
+    fact: 'Piloti a letištní věž hláskují slovy, aby se v rádiu nespletlo B a P. Celá abeceda: Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.',
+  },
+  {
+    id: 'fra-jerab', world: 'cesta', title: 'Pták na ocase', kind: 'lov', reward: 2, tags: ['rychle', 'foto'],
+    task: 'Frankfurt: najděte logo Lufthansy. Jaký pták je v něm?',
+    quiz: {
+      options: ['Orel', 'Jeřáb', 'Holub'],
+      correct: 1,
+      explain: 'Je to jeřáb v letu. Frankfurt je domovské letiště Lufthansy, takže tu jeřábů uvidíte opravdu hodně.',
+    },
+  },
+  {
+    id: 'fra-danke', world: 'cesta', title: 'Německé kouzelné slovo', kind: 'jazyk', reward: 2, tags: ['rychle'],
+    task: 'Frankfurt: řekněte někomu německy „Danke!“ (danke) – děkuji. Na rozloučenou můžete říct „Tschüss!“ (čüs).',
+  },
+  {
+    id: 'fra-velikost', world: 'cesta', title: 'Obří letiště', kind: 'tip', reward: 2, tags: ['rychle'],
+    task: 'Frankfurt: tipněte si, kolik cestujících projde tímhle letištěm za rok.',
+    quiz: {
+      options: ['Asi 6 milionů', 'Asi 60 milionů', 'Asi 600 milionů'],
+      correct: 1,
+      explain: 'Kolem 60 milionů lidí za rok – to je víc než pětkrát tolik, kolik lidí žije v celém Česku. Frankfurt patří k největším letištím v Evropě.',
+    },
+  },
+  {
+    id: 'fra-svet', world: 'cesta', title: 'Celý svět na jedné tabuli', kind: 'casova', reward: 4, tags: ['prodva'], timer: 10,
+    task: 'Frankfurt: máte 10 minut. Najděte na odletové tabuli lety do tří různých světadílů.',
+    input: 'Našli jsme lety do…',
+  },
+  {
+    id: 'fra-skyline', world: 'cesta', title: 'Vláček bez řidiče', kind: 'pozorovacka', reward: 2, tags: ['rychle'],
+    task: 'Frankfurt: pokud budete přejíždět mezi terminály, jeďte vláčkem SkyLine a sedněte si úplně dopředu. Kdo řídí?',
+    fact: 'Nikdo! SkyLine jezdí automaticky bez řidiče a spojuje terminály 1 a 2.',
+  },
+  {
+    id: 'let-alpy', world: 'cesta', title: 'Hory pod křídlem', kind: 'pozorovacka', reward: 3, tags: ['foto'],
+    task: 'Let z Frankfurtu do Říma: dívejte se z okna. Uvidíte hory se sněhem? Jestli je jasno, jsou to nejspíš Alpy.',
+    fact: 'Alpy jsou nejvyšší hory v Evropě. Nejvyšší z nich, Mont Blanc, měří přes 4 800 metrů. Hannibal kdysi přes Alpy vedl na Řím i slony!',
+    photo: true,
+  },
+  {
+    id: 'fco-jmeno', world: 'cesta', title: 'Přistání v Římě', kind: 'tip', reward: 2, tags: ['rychle'],
+    task: 'Řím: tipněte si, po kom se jmenuje hlavní římské letiště Fiumicino.',
+    quiz: {
+      options: ['Po Juliu Caesarovi', 'Po Leonardovi da Vinci', 'Po Michelangelovi'],
+      correct: 1,
+      explain: 'Letiště Leonardo da Vinci – Fiumicino (kód FCO). Leonardo kreslil létající stroje stovky let předtím, než vzlétlo první letadlo.',
+    },
+  },
+  {
+    id: 'fco-napis', world: 'cesta', title: 'Benvenuti!', kind: 'jazyk', reward: 2, tags: ['rychle'],
+    task: 'Řím: najděte po přistání první italský nápis a zkuste uhodnout, co znamená.',
+    input: 'Nápis a náš odhad…',
+    fact: 'Benvenuti = vítejte, Uscita = východ, Bagagli = zavazadla, Arrivi = přílety, Partenze = odlety.',
   },
 
   // ───────── Side questy: Jak žil malý Říman ─────────

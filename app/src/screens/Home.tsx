@@ -15,6 +15,7 @@ export function Home() {
   const chapterLeft = (id: string) => ALL_MISSIONS.filter((m) => m.world === id && !state.done[m.id]).length
   const current = [...unlocked].reverse().find((c) => c.id !== 'sifra' && chapterLeft(c.id) > 0) ?? unlocked[unlocked.length - 1]
   const left = current ? chapterLeft(current.id) : 0
+  const travelLeft = chapterLeft('cesta')
 
   const prevAt = next ? [...CHAPTERS].reverse().find((c) => c.unlockAt <= total)?.unlockAt ?? 0 : 0
   const pct = next ? Math.round(((total - prevAt) / (next.unlockAt - prevAt)) * 100) : 100
@@ -140,6 +141,16 @@ export function Home() {
               </span>
             </button>
           </div>
+          {travelLeft > 0 && (
+            <button onClick={() => go('mise/cesta')} className="card-dark row" style={{ borderRadius: 18 }}>
+              <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden><path fill="var(--gold-hi)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg>
+              <span style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontWeight: 800, fontSize: 15 }}>Cesta a letiště</span>
+                <span className="row-sub" style={{ color: 'var(--sand)' }}>Praha · Frankfurt · Řím – {travelLeft} {travelLeft === 1 ? 'úkol' : travelLeft <= 4 ? 'úkoly' : 'úkolů'}</span>
+              </span>
+              <span style={{ color: 'var(--gold-hi)', fontWeight: 800 }}>→</span>
+            </button>
+          )}
           {state.finale && (
             <button className="btn-dark" onClick={() => go('certifikat')}><Star size={16} />Certifikát Strážců</button>
           )}
